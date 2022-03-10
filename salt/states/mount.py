@@ -426,7 +426,7 @@ def mounted(
                         converted_size = _size_convert(size_match)
                         opt = "size={}k".format(converted_size)
                     # make cifs option user synonym for option username which is reported by /proc/mounts
-                    if fstype in ["cifs"] and opt.split("=")[0] == "user":
+                    if fstype in ["cifs"] and opt.split("=")[0] == "username":
                         opt = "username={}".format(opt.split("=")[1])
 
                     if opt.split("=")[0] in mount_ignore_fs_keys.get(fstype, []):
